@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ru.novikova.handlinglinksapp">
 
     <application
@@ -22,15 +23,34 @@
         <activity
             android:name=".AndroidAppLinksActivity"
             android:exported="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
 
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-            <data android:scheme="http" />
-            <data android:host="myownpersonaldomain.com" />
-
+                <data
+                    android:scheme="https"
+                    android:host="cheshegorovads.github.io"
+                    android:pathPattern="/start" />
+            </intent-filter>
         </activity>
+
+        <activity android:name=".CountParticipantsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="cheshegorova.github.io"
+                    android:pathPrefix="/count/" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

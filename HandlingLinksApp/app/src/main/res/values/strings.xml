@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Handling Links App</string>
+    <string name="count">Count participants = %s</string>
 </resources>
